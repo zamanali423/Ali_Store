@@ -1,0 +1,111 @@
+.zero {
+  font-size: 0.82rem;
+  top: 10%;
+  left: 92%;
+}
+
+/* sign up */
+.background-radial-gradient {
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(
+      650px circle at 0% 0%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1250px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    );
+}
+
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.9) !important;
+  backdrop-filter: saturate(200%) blur(25px);
+}
+
+/* for admin panel */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+#nav {
+  background-color: #eee;
+  padding: 10px;
+}
+
+#nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* card */
+
+.cardMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.imgCard {
+  height: 35vh;
+}
+
+
