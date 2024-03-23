@@ -1,30 +1,25 @@
 require("dotenv").config();
 const express = require("express");
-const port = 3002;
+const port = process.env.PORT;
 const app = express();
-const proRouter = require("./routers/products/productRouter");
-const userRouter = require("./routers/users/userRouter");
+const userRouter = require("./routers/authorization/users");
 const cors = require("cors");
-const body_parser = require("body-parser");
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const errorMiddleware = require("./middlewares/errors/error_middleware");
-const adminRouter = require("./routers/admin-panel/adminRouter");
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cors());
-app.use(body_parser.json());
-app.use(body_parser.urlencoded({ extended: true }));
-app.use("/api", proRouter);
-app.use("/authentication/user", userRouter);
-app.use("/admin", adminRouter);
-app.use(errorMiddleware);
+app.use("/auth", userRouter);
 
-const uri = process.env.DB_URL;
+//! connect mongodb
+const url = process.env.USER_URL;
 mongoose
-  .connect(uri)
+  .connect(url)
   .then(() => {
-    console.log("DB Connected Successfully");
+    console.log("Database connect from this server");
     app.listen(port, () => {
-      console.log(`Server running on port ${port}`);
+      console.log(`server running on port ${port}`);
     });
   })
   .catch((error) => {
